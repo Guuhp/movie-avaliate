@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './user/entities/user.entity';
 import { Movie } from './movie/entities/movie.entity';
 import { MovieModule } from './movie/movie.module';
+import { Score } from './score/entities/score.entity';
+import { ScoreModule } from './score/score.module';
 
 @Module({
   imports: [
@@ -14,10 +14,10 @@ import { MovieModule } from './movie/movie.module';
       username: 'root',
       password: 'admin',
       database: 'movie_avaliate',
-      entities: [Movie, User],
+      entities: [Movie, Score],
       synchronize: true,
       logging: true,
-    }), UserModule, MovieModule],
+    }), MovieModule, ScoreModule],
   controllers: [],
   providers: [],
 })

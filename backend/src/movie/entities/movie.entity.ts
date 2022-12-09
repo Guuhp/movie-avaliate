@@ -1,23 +1,18 @@
-import { User } from './../../user/entities/user.entity';
-import {
-    Column,
-    Double,
-    Entity,
-    JoinTable,
-    ManyToMany,
-    PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Score } from 'src/score/entities/score.entity';
+import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity('tb_movie')
 export class Movie {
-    @PrimaryGeneratedColumn()
-    id: number;
-    @Column()
-    title: string;
-    @Column()
-    score: number;
-    @Column()
-    count: number;
-    @Column()
-    image: string;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+  @Column()
+  title: string;
+  @Column()
+  sinopse: string;
+  @Column()
+  image: string;
+
+  @OneToMany(() => Score, (score) => score.movies, { cascade: true })
+  scores: Score[]
+
 }
