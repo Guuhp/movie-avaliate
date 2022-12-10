@@ -11,6 +11,7 @@
       <p class="card-text">
         {{ item.sinopse }}
       </p>
+      <p>{{ item.scores }}</p>
       <a
         (click)="seletedMovie(item)"
         routerLink="/movie/{{ item.id }}"

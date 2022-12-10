@@ -17,14 +17,11 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.getMovies().subscribe((data: Movie[]) => {
       this.dataSource = data;
-      console.log(this.dataSource);
     })
 
   }
 
   seletedMovie(movie: Movie): void {
-    console.log(movie);
-
     this.movieService.selectedMovie = movie;
   }
 }
