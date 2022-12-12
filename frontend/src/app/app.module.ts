@@ -4,8 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -16,8 +20,6 @@ import { DialogMovieComponent } from './components/dialog-movie/dialog-movie.com
 import { MoviesComponent } from './components/movies/movies.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { ListingComponent } from './page/listing/listing.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     FormsModule,
     MatButtonModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDividerModule,
+    MatProgressBarModule
 
   ],
   providers: [],
