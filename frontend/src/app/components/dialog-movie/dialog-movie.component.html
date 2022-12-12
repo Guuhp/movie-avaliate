@@ -1,16 +1,18 @@
-<h1 mat-dialog-title>Hi {{ data.email }}</h1>
+<h1 mat-dialog-title>Avalie o Filme</h1>
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
+  <!-- <p>What's your favorite animal?</p> -->
   <mat-form-field appearance="fill">
-    <mat-label>Status da Tarefa</mat-label>
-    <input matInput [(ngModel)]="data.email" />
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="data.username" />
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>Status da Tarefa</mat-label>
+    <mat-label>Avaliação</mat-label>
     <input matInput [(ngModel)]="data.score" />
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+    Confirmar
+  </button>
 </div>

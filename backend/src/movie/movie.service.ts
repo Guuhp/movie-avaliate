@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Score } from 'src/score/entities/score.entity';
 import { Repository } from 'typeorm';
 import { CreateMovieDto } from './dto/create-movie.dto';
+import { UpdateMovieDto } from './dto/update-movie.dto';
 import { Movie } from './entities/movie.entity';
 
 @Injectable()
@@ -16,15 +17,6 @@ export class MovieService {
     return this.movieRepository.save(createMovieDto);
   }
 
-  findScore() {
-    const score = this.movieRepository
-      .createQueryBuilder('Score')
-      .select(['`Score`.`moviesId`'])
-      .getOne()
-    console.log(score);
-
-  }
-
   findAll() {
     return this.movieRepository.find();
   }
@@ -32,4 +24,14 @@ export class MovieService {
   findOne(id: string) {
     return this.movieRepository.findOneBy({ id });
   }
+
+  async update(id: string, updateMovieDto: UpdateMovieDto) {
+    const movie = await this.findOne(id)
+    movie.image = updateMovieDto.image;
+    movie.title = updateMovieDto.title;
+    movie.sinopse = updateMovieDto.sinopse;
+    movie.scores = updateMovieDto.scores;
+    return this.movieRepository.save(movie);
+  }
+
 }

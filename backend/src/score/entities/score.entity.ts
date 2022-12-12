@@ -1,5 +1,5 @@
-import { Movie } from "src/movie/entities/movie.entity";
-import { Column, Entity, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Movie } from 'src/movie/entities/movie.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('tb_score')
 export class Score {
@@ -9,9 +9,5 @@ export class Score {
   email: string;
   @Column()
   score: string;
-
-  @ManyToOne(() => Movie, (movie) => movie.scores, { eager: true })
-  movies: Movie;
-
 
 }

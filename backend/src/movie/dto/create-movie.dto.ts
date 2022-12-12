@@ -5,4 +5,5 @@ export class CreateMovieDto {
   title: string;
   sinopse: string;
   image: string;
+  scores?: Score[];
 }

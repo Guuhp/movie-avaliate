@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row content">
   <div class="card" style="width: 18rem" *ngFor="let item of dataSource">
     <img
       class="card-img-top"
@@ -7,16 +7,13 @@
       style="object-fit: cover"
     />
     <div class="card-body">
-      <h5 class="card-title">{{ item.title }}</h5>
-      <p class="card-text">
-        {{ item.sinopse }}
-      </p>
-      <p>{{ item.scores }}</p>
+      <h2 class="card-title">{{ item.title }}</h2>
+      <h4 class="card-text">{{ item.scores?.length }} Avaliações</h4>
       <a
         (click)="seletedMovie(item)"
         routerLink="/movie/{{ item.id }}"
         class="btn btn-primary"
-        >Visitar</a
+        >Ver Mais</a
       >
     </div>
   </div>

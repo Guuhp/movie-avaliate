@@ -13,8 +13,10 @@ import { DialogMovieComponent } from '../dialog-movie/dialog-movie.component';
 })
 export class AvaliateMovieComponent {
 
-  movies?: Movie
-  score?: Score
+  movies!: Movie
+  score: Score[] = []
+  num?: number
+  url?: string
 
   constructor(
     private movieService: MoviesService,
@@ -29,12 +31,19 @@ export class AvaliateMovieComponent {
 
   }
 
+  randomIMG(): void {
+    this.num = Math.random() * 1000
+    this.url = `https://avatars.alphacoders.com/avatars/view/${this.num}`
+  }
+
   getMovieId(id: string): void {
     this.movieService.getMovieID(id).subscribe((data: Movie) => {
-      data.scores?.forEach((i) => {
-        this.score = i
-      })
       this.movies = data;
+      data.scores?.forEach((p) => {
+        this.score.push(p)
+      })
+      console.log(this.movies);
+
     })
   }
 
@@ -44,16 +53,30 @@ export class AvaliateMovieComponent {
       data:
         taskz === null
           ? {
-            name: '',
-            status: undefined,
+            email: '',
+            score: '',
           }
           : {
             id: taskz.id,
-            name: taskz.email,
+            name: taskz.username,
             status: taskz.score,
           },
     });
 
+    dialogRef.afterClosed().subscribe((result) => {
+      this.movieService.save(result).subscribe({
+        next: (a) => {
+          this.score.push(a)
+          this.movies.scores?.push(a)
+          console.log(this.movies);
+
+          this.movieService.updateMovie(this.movies.id as string, this.movies)
+            .subscribe((data: Movie) => {
+              this.movies = data
+            })
+        }
+      })
+    })
 
   }
 }

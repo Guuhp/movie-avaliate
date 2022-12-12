@@ -1,0 +1,12 @@
+mat-toolbar {
+  /* background-image: linear-gradient(45deg, #ae00ffb3, #3021fdb9); */
+  background-color: #3021fd;
+}
+
+span {
+  color: white;
+}
+
+mat-icon {
+  color: white;
+}

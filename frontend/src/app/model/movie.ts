@@ -1,6 +1,6 @@
 import { Score } from "./score";
 
-export class Movie {
+export interface Movie {
   id?: string;
   title?: string;
   sinopse?: string;

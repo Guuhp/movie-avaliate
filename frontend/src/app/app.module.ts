@@ -16,6 +16,8 @@ import { DialogMovieComponent } from './components/dialog-movie/dialog-movie.com
 import { MoviesComponent } from './components/movies/movies.component';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
 import { ListingComponent } from './page/listing/listing.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import { ListingComponent } from './page/listing/listing.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule
 
   ],
   providers: [],

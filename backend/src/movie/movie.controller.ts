@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/common';
 import { MovieService } from './movie.service';
 import { CreateMovieDto } from './dto/create-movie.dto';
 
@@ -11,13 +11,6 @@ export class MovieController {
     return this.movieService.create(createMovieDto);
   }
 
-  @Get('score')
-  getScore() {
-    let a = this.movieService.findScore()
-    console.log(a);
-    return a;
-
-  }
 
   @Get()
   findAll() {
@@ -27,5 +20,10 @@ export class MovieController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.movieService.findOne(id);
+  }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() createMovieDto: CreateMovieDto) {
+    return this.movieService.update(id, createMovieDto)
   }
 }

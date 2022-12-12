@@ -1,6 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+.card {
+  display: flex;
+  height: 400px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffff;
+}
+
 .content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 300px;
+  justify-content: center;
+  gap: 50px;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-body h4,
+h2 {
+  font-weight: bold;
 }

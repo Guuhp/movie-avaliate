@@ -7,12 +7,16 @@ export class Movie {
   id: string;
   @Column()
   title: string;
-  @Column()
+  @Column({ length: 1000 })
   sinopse: string;
   @Column()
   image: string;
 
-  @OneToMany(() => Score, (score) => score.movies, { cascade: true })
-  scores: Score[]
+  @ManyToMany(() => Score, { eager: true })
+  @JoinTable()
+  scores: Score[];
+
+
+
 
 }

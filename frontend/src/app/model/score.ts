@@ -1,5 +1,5 @@
-export class Score {
+export interface Score {
   id?: string;
-  email?: string;
+  username?: string;
   score?: string;
 }
