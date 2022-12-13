@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
+  padding: 50px;
   background: -webkit-linear-gradient(to left, #ae00ffb3, #3021fdb9);
   background: -o-linear-gradient(to left, #ae00ffb3, #3021fdb9);
   background: -moz-linear-gradient(to left, #ae00ffb3, #3021fdb9);

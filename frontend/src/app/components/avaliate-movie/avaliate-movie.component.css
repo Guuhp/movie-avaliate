@@ -10,10 +10,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  background: -webkit-linear-gradient(to left, #ae00ffb3, #3021fdb9);
-  background: -o-linear-gradient(to left, #ae00ffb3, #3021fdb9);
-  background: -moz-linear-gradient(to left, #ae00ffb3, #3021fdb9);
-  background: linear-gradient(to left, #ae00ffb3, #3021fdb9);
+
 }
 
 .containerr {
@@ -21,7 +18,8 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
+  padding-top: 20px;
+
 }
 
 .card {
@@ -35,6 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
 }
 .title h1 {
   font-size: 30px;
@@ -67,6 +66,7 @@ button:hover {
 
 main{
   padding-bottom: 50px;
+
 }
 .container-comment {
   display: flex;
