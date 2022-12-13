@@ -8,6 +8,8 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
   background: -webkit-linear-gradient(to left, #ae00ffb3, #3021fdb9);
   background: -o-linear-gradient(to left, #ae00ffb3, #3021fdb9);
   background: -moz-linear-gradient(to left, #ae00ffb3, #3021fdb9);
