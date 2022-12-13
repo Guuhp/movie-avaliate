@@ -25,3 +25,10 @@
 h2 {
   font-weight: bold;
 }
+
+button:hover {
+  background-color: #ae00ff;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+}

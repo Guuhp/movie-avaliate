@@ -63,6 +63,9 @@ button:hover {
   font-weight: bold;
 }
 
+main{
+  padding-bottom: 50px;
+}
 .container-comment {
   display: flex;
   flex-direction: column;
@@ -81,6 +84,7 @@ button:hover {
 }
 
 .example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  /* https://material.angular.io/assets/img/examples/shiba1.jpg */
+  background-image: url("https://th.bing.com/th/id/OIP.pdQm0Y30i-9gnj2eo1CVWwHaHa?pid=ImgDet&rs=1");
   background-size: cover;
 }

@@ -47,19 +47,19 @@ export class AvaliateMovieComponent {
     })
   }
 
-  openDialog(taskz: Score | null): void {
+  openDialog(score: Score | null): void {
     const dialogRef = this.dialog.open(DialogMovieComponent, {
       width: '250px',
       data:
-        taskz === null
+        score === null
           ? {
             email: '',
             score: '',
           }
           : {
-            id: taskz.id,
-            name: taskz.username,
-            status: taskz.score,
+            id: score.id,
+            name: score.username,
+            status: score.score,
           },
     });
 

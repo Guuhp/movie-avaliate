@@ -1,8 +1,8 @@
 <body>
   <div class="content">
     <app-toolbar></app-toolbar>
-    <div class="containerr ">
-      <div class="card mb-3 container ">
+    <div class="containerr">
+      <div class="card mb-3 container">
         <img
           src="{{ movies.image }}"
           class="card-img-top"
@@ -29,22 +29,24 @@
       </div>
     </div>
 
-    <div class="container-comment">
-      <div class="title_avaliate">
-        <h1>Avaliações dos Usuários</h1>
+    <main>
+      <div class="container-comment">
+        <div class="title_avaliate">
+          <h1>Avaliações dos Usuários</h1>
+        </div>
+        <mat-card class="example-card" *ngFor="let item of movies.scores">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{ item.username }}</mat-card-title>
+            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{ item.score }}
+            </p>
+          </mat-card-content>
+        </mat-card>
       </div>
-      <mat-card class="example-card" *ngFor="let item of movies.scores">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ item.username }}</mat-card-title>
-          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            {{ item.score }}
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+    </main>
   </div>
 </body>

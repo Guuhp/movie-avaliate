@@ -5,8 +5,8 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 export class Score {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-  @Column()
-  email: string;
+  @Column({length:10})
+  username: string;
   @Column()
   score: string;
 
